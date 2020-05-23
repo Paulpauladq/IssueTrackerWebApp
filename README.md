@@ -45,6 +45,10 @@ based React.createElement() calls using Babel.
 ### Automated
 * add customized commands in package.json to allow customized commands to be run
 
+### Summary
+  It was fun to get familiar with the tools like Express and Node.JS. The MERN stack is very
+  convenient to use and easy to understand.
+
 ## Chapter 3
 ### Issue Tracker
 * add classes representing components of issue trackers
@@ -73,7 +77,12 @@ based React.createElement() calls using Babel.
               
               ​    
 ### Dynamic Composition
-* we’ll replace our hard-coded set of IssueRow components with a programmatically generated set of components from an 
+* I replace our hard-coded set of IssueRow components with a programmatically generated set of components from an 
 array of issues.
 
+
 ![chapter3_dynamic_components](./images/chapter3_dynamic_components.png)
+
+### Summary 
+  It was fun to write Web app using React. The component-based framework is
+  very easy to use and we are able to manage the web UI gracefully using component classes.
