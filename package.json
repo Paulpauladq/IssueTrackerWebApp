@@ -4,7 +4,13 @@
   "description": "a Web project based on the Mern stack",
   "main": "index.js",
   "scripts": {
+    "start": "node server/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.ccs.neu.edu/NEU-CS5610-SU20/ZiqiTang-Book.git"
   },
   "keywords": [
     "Mern"
