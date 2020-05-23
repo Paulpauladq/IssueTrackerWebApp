@@ -44,3 +44,36 @@ based React.createElement() calls using Babel.
 
 ###Automated
 * add customized commands in package.json to allow customized commands to be run
+
+##Chapter 3
+###Issue Tracker
+* add classes representing components of issue trackers
+
+###React Classes
+* the objective is to convert the single-line JSX into a simple React component instantiated
+  from a React class, so that we can later use the full power of the first class React components.
+
+![chapter3_helloworldReact](./images/chapter3_helloworldReact.png)
+
+###Composing Components
+* the UI can be split into smaller independent pieces so that each piece can be coded and reasoned in isolation, making it easier to build and understand a complex UI.
+* A component takes inputs (called properties) and its output is the rendered UI of the component.
+
+![chapter3_issuetracker_React](./images/chapter3_issuetracker_React.png)
+
+###Passing Data
+
+* Using properties: It should be possible to pass different input data from a parent component to a child component and make it render differently on different instances.
+
+![chapter3_passing_using_children](./images/chapter3_passing_using_children.png)
+
+* Using children: There is another way to pass data to other components, using the contents of the HTML-like node of the component. In the child component, this can be accessed using a special field of this.props called this. props.children.
+              
+              ![chapter3_passing_using_children](./images/chapter3_passing_using_children.png)
+              
+              ​    
+###Dynamic Composition
+* we’ll replace our hard-coded set of IssueRow components with a programmatically generated set of components from an 
+array of issues.
+
+![chapter3_dynamic_components](./images/chapter3_dynamic_components.png)
