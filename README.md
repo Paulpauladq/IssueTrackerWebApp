@@ -93,9 +93,16 @@ array of issues.
 ### Inital State
 * The state of a component is captured in this.state variable using the form of key-value pair in the component’s class.
 * In the first step, we just create the inital state variable and store it in this.state variable in the constructor of IssueTable class.
-  
+![chapter4_react_state](./images/chapter4_initial_state.png)
+
 ### Async State Initialization
 * Normally, the initialization state will require to be fetched via API call instead of static setup in the constructor.
 * In this step, we use asynchronized call in the componentDidMount() method to set up the state after the DOM is represented.
 * We use the setState() callback function inside the asynchronized call to set the initial state. 
 * Setting the state outside the constructor is to make sure that the state will be set after all the components are ready to be rendered(DOM is ready).
+![chapter4_react_state](./images/chapter4_async_state_init.png)
+
+###Updating state
+* In this step, we need to append the content of the components
+* To do this, we need make a copy of this.state first and use setState() to set up the appended array.
+
