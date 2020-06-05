@@ -94,3 +94,8 @@ array of issues.
 * The state of a component is captured in this.state variable using the form of key-value pair in the component’s class.
 * In the first step, we just create the inital state variable and store it in this.state variable in the constructor of IssueTable class.
   
+### Async State Initialization
+* Normally, the initialization state will require to be fetched via API call instead of static setup in the constructor.
+* In this step, we use asynchronized call in the componentDidMount() method to set up the state after the DOM is represented.
+* We use the setState() callback function inside the asynchronized call to set the initial state. 
+* Setting the state outside the constructor is to make sure that the state will be set after all the components are ready to be rendered(DOM is ready).

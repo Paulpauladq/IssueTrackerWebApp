@@ -22,7 +22,15 @@ class IssueFilter extends React.Component {
 class IssueTable extends React.Component {
     constructor() {
         super();
-        this.state = {issues: initialIssues};
+        this.state = {issues: []};
+    }
+    componentDidMount(){
+        this.loadData();
+    }
+    loadData(){
+        setTimeout(() => {
+            this.setState({ issues: initialIssues });
+        }, 500);
     }
     render() {
         const issueRows = this.state.issues.map(issue =>
