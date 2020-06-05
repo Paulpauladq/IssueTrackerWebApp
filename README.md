@@ -86,3 +86,11 @@ array of issues.
 ### Summary 
   It was fun to write Web app using React. The component-based framework is
   very easy to use and we are able to manage the web UI gracefully using component classes.
+  
+##Chapter 4
+  In this chapter, what we want to do is to add components which can respond to the users' input and events.
+  In React, we could implement that using state.
+### Inital State
+* The state of a component is captured in this.state variable using the form of key-value pair in the component’s class.
+* In the first step, we just create the inital state variable and store it in this.state variable in the constructor of IssueTable class.
+  
