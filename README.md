@@ -1,9 +1,23 @@
 # ZiqiTang-Book
 
-##Chapter 5
-  
+## Chapter 5
 
-##Chapter 4
+### The About API
+* In this step, we use Apollo server and GraphAPI to set up the about API
+* We define two fields in GraphQL for getting and setting the about message.
+* We need to set up corresponding resolvers for the defined schema.
+* Lastly, we'll launch the Apollo server in Express as the middleware.
+* We could test our APIs on the URL where we run our server.
+![chapter5_express_graphQL](./images/chapter5_about_API.png)
+![chapter5_express_graphQL](./images/chapter5_about_api_mutation.png)
+![chapter5_express_graphQL](./images/chapter5_curl_get.png)
+
+### GraphQL Schema File
+
+
+
+
+## Chapter 4
    In this chapter, what we want to do is to add components which can respond to the users' input and events.
   In React, we could implement that using state.
 ### Inital State
@@ -18,11 +32,11 @@
 * Setting the state outside the constructor is to make sure that the state will be set after all the components are ready to be rendered(DOM is ready).
 ![chapter4_react_state](./images/chapter4_async_state_init.png)
 
-###Updating State
+### Updating State
 * In this step, we need to append the content of the components
 * To do this, we need make a copy of this.state first and use setState() to set up the appended array.
 
-###Lifting State Up
+### Lifting State Up
 * In this step, we need to refactor the code to separate the whole processes into their own components.
 * We'll create the IssueList class and make it as the father component and make the IssueAdd and IssueTable as its children component.
 * We put load data and add row method into the IssueList class.
@@ -30,7 +44,7 @@
 * We need to bind the createIssue method to IssueList component since we need to call the function with this refering to IssueList class.
 * The results remain the same.
 
-###Event Handling
+### Event Handling
 * We will and a form on the bottom of the table and set the onSubmit event handler for the button to add the content we input into the IssueTable.
 * We will render using the document form and pass the text we input as props of the handling method.
 * Inside the handleSubmit method, we need to handle the event and use createIssue method to add rows to the table.
