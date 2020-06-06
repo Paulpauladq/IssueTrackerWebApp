@@ -102,7 +102,25 @@ array of issues.
 * Setting the state outside the constructor is to make sure that the state will be set after all the components are ready to be rendered(DOM is ready).
 ![chapter4_react_state](./images/chapter4_async_state_init.png)
 
-###Updating state
+###Updating State
 * In this step, we need to append the content of the components
 * To do this, we need make a copy of this.state first and use setState() to set up the appended array.
+
+###Lifting State Up
+* In this step, we need to refactor the code to separate the whole processes into their own components.
+* We'll create the IssueList class and make it as the father component and make the IssueAdd and IssueTable as its children component.
+* We put load data and add row method into the IssueList class.
+* We pass the this.state and this.createIssue method down to the children class as props and the children class will render using these props.
+* We need to bind the createIssue method to IssueList component since we need to call the function with this refering to IssueList class.
+* The results remain the same.
+
+###Event Handling
+* We will and a form on the bottom of the table and set the onSubmit event handler for the button to add the content we input into the IssueTable.
+* We will render using the document form and pass the text we input as props of the handling method.
+* Inside the handleSubmit method, we need to handle the event and use createIssue method to add rows to the table.
+* The bind for handleSubmit method is needed since the original object is the window.
+![chapter4_react_state](./images/chapter4_event_handler.png)
+
+
+
 
