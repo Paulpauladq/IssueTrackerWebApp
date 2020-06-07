@@ -38,11 +38,20 @@
 * After that, we need to integrate the create API to our app
 * When we hit the button, we will call the IssueAdd mutation API to add the issue data to the server.
 * In this way, the table will remain the added rows after refresh.
+* Also, we should use query variables to prevent errors for the field input 
 ![chapter5_express_graphQL](./images/chapter5_issueAdd.png)
 ![chapter5_express_graphQL](./images/chapter5_schema_add.png)
 ![chapter5_express_graphQL](./images/chapter5_create_API_integration.png)
+![chapter5_express_graphQL](./images/chapter5_query_variables.png)
 
-
+### Input Validation and Error Displays
+* We could use dropdown box and enum fields to restrict the input
+* We could add helper function to check if some inputs are invalid
+* We could use alert pop up in JS to display the error in our App
+![chapter5_express_graphQL](./images/chapter5_input_validation_true.png)
+![chapter5_express_graphQL](./images/chapter5_input_validation_wrong.png)
+![chapter5_express_graphQL](./images/chapter5_input_validation_bad_user-input.png)
+![chapter5_express_graphQL](./images/chapter5_display_errors.png)
 
 ## Chapter 4
    In this chapter, what we want to do is to add components which can respond to the users' input and events.
