@@ -1,9 +1,59 @@
 # ZiqiTang-Book
 
-##Chapter 5
-  
+## Chapter 5
 
-##Chapter 4
+### The About API
+* In this step, we use Apollo server and GraphAPI to set up the about API
+* We define two fields in GraphQL for getting and setting the about message.
+* We need to set up corresponding resolvers for the defined schema.
+* Lastly, we'll launch the Apollo server in Express as the middleware.
+* We could test our APIs on the URL where we run our server.
+![chapter5_express_graphQL](./images/chapter5_about_API.png)
+![chapter5_express_graphQL](./images/chapter5_about_api_mutation.png)
+![chapter5_express_graphQL](./images/chapter5_curl_get.png)
+
+### GraphQL Schema File
+* We put type definition into a separate schema file
+
+### The List API
+* We'll create a list GET API in this step.
+* We define a new type issue and list all the fields' types inside it and put it into the Query scope.
+* In the server code, we also need to add a resolver under Query for the new field.
+![chapter5_express_graphQL](./images/chapter5_list_api.png)
+
+### Integrate the List API
+* Inside the loadData() method in the App.js, we could use asychronized call to get the data from DB.
+* use POST request, and set the body to the query message.
+
+### Custom Scalar Types
+* We want to use scalar type for Date, since we could do some calculations and comparisons on the server side.
+* Firstly, we define the scalar type instead of the normal type in the schema file.
+* Secondly, we need to add a top-level resolver for all scalar types utilizing both serialization and parsing.
+![chapter5_express_graphQL](./images/chapter5_scalar.png)
+
+### The Create API
+* We create a new API for adding the new issue in the app.
+* We need to add a new field called IssueAdd in the schema file.
+* Also, we need to serialize and parse the date String so we add parser in the GraphQLDate Type thus when we send out the request the date-related fields will be properly handled.
+* After that, we need to integrate the create API to our app
+* When we hit the button, we will call the IssueAdd mutation API to add the issue data to the server.
+* In this way, the table will remain the added rows after refresh.
+* Also, we should use query variables to prevent errors for the field input 
+![chapter5_express_graphQL](./images/chapter5_issueAdd.png)
+![chapter5_express_graphQL](./images/chapter5_schema_add.png)
+![chapter5_express_graphQL](./images/chapter5_create_API_integration.png)
+![chapter5_express_graphQL](./images/chapter5_query_variables.png)
+
+### Input Validation and Error Displays
+* We could use dropdown box and enum fields to restrict the input
+* We could add helper function to check if some inputs are invalid
+* We could use alert pop up in JS to display the error in our App
+![chapter5_express_graphQL](./images/chapter5_input_validation_true.png)
+![chapter5_express_graphQL](./images/chapter5_input_validation_wrong.png)
+![chapter5_express_graphQL](./images/chapter5_input_validation_bad_user-input.png)
+![chapter5_express_graphQL](./images/chapter5_display_errors.png)
+
+## Chapter 4
    In this chapter, what we want to do is to add components which can respond to the users' input and events.
   In React, we could implement that using state.
 ### Inital State
@@ -18,11 +68,11 @@
 * Setting the state outside the constructor is to make sure that the state will be set after all the components are ready to be rendered(DOM is ready).
 ![chapter4_react_state](./images/chapter4_async_state_init.png)
 
-###Updating State
+### Updating State
 * In this step, we need to append the content of the components
 * To do this, we need make a copy of this.state first and use setState() to set up the appended array.
 
-###Lifting State Up
+### Lifting State Up
 * In this step, we need to refactor the code to separate the whole processes into their own components.
 * We'll create the IssueList class and make it as the father component and make the IssueAdd and IssueTable as its children component.
 * We put load data and add row method into the IssueList class.
@@ -30,7 +80,7 @@
 * We need to bind the createIssue method to IssueList component since we need to call the function with this refering to IssueList class.
 * The results remain the same.
 
-###Event Handling
+### Event Handling
 * We will and a form on the bottom of the table and set the onSubmit event handler for the button to add the content we input into the IssueTable.
 * We will render using the document form and pass the text we input as props of the handling method.
 * Inside the handleSubmit method, we need to handle the event and use createIssue method to add rows to the table.
