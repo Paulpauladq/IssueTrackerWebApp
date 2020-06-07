@@ -13,7 +13,17 @@
 ![chapter5_express_graphQL](./images/chapter5_curl_get.png)
 
 ### GraphQL Schema File
+* We put type definition into a separate schema file
 
+### The List API
+* We'll create a list GET API in this step.
+* We define a new type issue and list all the fields' types inside it and put it into the Query scope.
+* In the server code, we also need to add a resolver under Query for the new field.
+![chapter5_express_graphQL](./images/chapter5_list_api.png)
+
+### Integrate the List API
+* Inside the loadData() method in the App.js, we could use asychronized call to get the data from DB.
+* use POST request, and set the body to the query message.
 
 
 
