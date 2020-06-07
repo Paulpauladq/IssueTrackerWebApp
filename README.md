@@ -25,6 +25,23 @@
 * Inside the loadData() method in the App.js, we could use asychronized call to get the data from DB.
 * use POST request, and set the body to the query message.
 
+### Custom Scalar Types
+* We want to use scalar type for Date, since we could do some calculations and comparisons on the server side.
+* Firstly, we define the scalar type instead of the normal type in the schema file.
+* Secondly, we need to add a top-level resolver for all scalar types utilizing both serialization and parsing.
+![chapter5_express_graphQL](./images/chapter5_scalar.png)
+
+### The Create API
+* We create a new API for adding the new issue in the app.
+* We need to add a new field called IssueAdd in the schema file.
+* Also, we need to serialize and parse the date String so we add parser in the GraphQLDate Type thus when we send out the request the date-related fields will be properly handled.
+* After that, we need to integrate the create API to our app
+* When we hit the button, we will call the IssueAdd mutation API to add the issue data to the server.
+* In this way, the table will remain the added rows after refresh.
+![chapter5_express_graphQL](./images/chapter5_issueAdd.png)
+![chapter5_express_graphQL](./images/chapter5_schema_add.png)
+![chapter5_express_graphQL](./images/chapter5_create_API_integration.png)
+
 
 
 ## Chapter 4
