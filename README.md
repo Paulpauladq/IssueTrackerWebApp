@@ -12,16 +12,13 @@
 * After that, we can create a script to initialize the schema of the Mongo database.
 ![chapter6_mongoDB](./images/chapter6_mongo_schema.png)
 
-### Reading Data from MongoDB
+### Reading and writing Data from MongoDB
 * In the next step, we integrate the code into the server code and make it read from the MongoDB.
 * The result will look the same, but we actually reading data from mongoDB, I test it by adding a record in mongo.
 ![chapter6_mongoDB](./images/chapter6_reading_mongo.png)
-
-
-
-
-
-
+* Also, we'll create another counter collections to keep track of the id number for each record.
+* In this way, we could be able to find a new id and give it to the new record.
+![chapter6_mongoDB](./images/chapter6_writing_to_mongoDB.png)
 
 ## Chapter 5
 
