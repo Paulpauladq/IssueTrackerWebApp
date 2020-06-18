@@ -5,7 +5,11 @@
 ### Mongo NodeJS driver
 * In this section, we want to get to know the mechanism of mongoDB and integrate it into our system.
 * We're using nodeJS driver to run some simple mongoDB scripts to test the functionality.
+* Firstly, we're using callback function to print the log if the error happenes.
 ![chapter6_mongoDB](./images/chapter6_mongo_driver.png)
+* Secondly, we could instead using try/catch in the async function to test these mongo CRUD operations.
+![chapter6_mongoDB](./images/chapter6_test_mongo_with_async.png)
+
 
 
 
