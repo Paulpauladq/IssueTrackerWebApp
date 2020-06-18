@@ -1,5 +1,15 @@
 # ZiqiTang-Book
 
+## Chapter 6
+
+### Mongo NodeJS driver
+* In this section, we want to get to know the mechanism of mongoDB and integrate it into our system.
+* We're using nodeJS driver to run some simple mongoDB scripts to test the functionality.
+![chapter6_mongoDB](./images/chapter6_mongo_driver.png)
+
+
+
+
 ## Chapter 5
 
 ### The About API
