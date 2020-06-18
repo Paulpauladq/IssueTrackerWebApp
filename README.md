@@ -9,6 +9,15 @@
 ![chapter6_mongoDB](./images/chapter6_mongo_driver.png)
 * Secondly, we could instead using try/catch in the async function to test these mongo CRUD operations.
 ![chapter6_mongoDB](./images/chapter6_test_mongo_with_async.png)
+* After that, we can create a script to initialize the schema of the Mongo database.
+![chapter6_mongoDB](./images/chapter6_mongo_schema.png)
+
+### Reading Data from MongoDB
+* In the next step, we integrate the code into the server code and make it read from the MongoDB.
+* The result will look the same, but we actually reading data from mongoDB, I test it by adding a record in mongo.
+![chapter6_mongoDB](./images/chapter6_reading_mongo.png)
+
+
 
 
 
