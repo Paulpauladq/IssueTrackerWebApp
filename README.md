@@ -12,6 +12,17 @@
 ### Multiple environments
 * We elminate the hard code variables and set them in separate variables in separate env file.
 
+### Proxy-Based Architecture
+* In order to prevent malicious websites from gaining unauthorized access to the
+  application, we adopt proxy architechture in this step.
+![chapter7_Arch_and EsLint](./images/chapter7_proxy.png)
+
+### Eslint
+* We are using the Eslint to restrict the code format according to Airbnb.
+![chapter7_Arch_and EsLint](./images/chapter7_eslint.png)
+* Also, change the style for the ui code.
+![chapter7_Arch_and EsLint](./images/chapter7_eslint_ui.png)
+
 
 ## Chapter 6
 
