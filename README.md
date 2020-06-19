@@ -1,5 +1,18 @@
 # ZiqiTang-Book
 
+## Chapter 7
+
+### UI server
+* In order to make our system more scalable for larger traffic, we want to separate the server into two parts -- ui and api.
+* When the scale of the customers increases, the api server may need load balancer, so I should be a good practice to separate the api server.
+* After the separation, the ui server will contain only the static middleware and the api server is only responsible for handling APIs.
+* Upon deployment, the ui server will display the static page and get data from mongoDB, then we the user made the new requests the api will handle them.
+![chapter7_Arch_and EsLint](./images/chapter7_ui_server.png)
+
+### Multiple environments
+* We elminate the hard code variables and set them in separate variables in separate env file.
+
+
 ## Chapter 6
 
 ### Mongo NodeJS driver

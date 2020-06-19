@@ -1,7 +1,32 @@
 {
-  "name": "$name$",
-  "version": "$version$",
+  "name": "pro-mern-stack-2",
+  "version": "1.0.0",
+  "description": "a Web project based on the Mern stack",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon -w uiserver.js -w .env uiserver.js",
+    "compile": "babel src --out-dir public",
+    "watch": "babel src --out-dir public --watch --verbose"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.ccs.neu.edu/NEU-CS5610-SU20/ZiqiTang-Book.git"
+  },
+  "keywords": [
+    "Mern"
+  ],
+  "author": "Ziqi Tang",
+  "license": "ISC",
   "dependencies": {
-    $END$
+    "dotenv": "^6.2.0",
+    "express": "^4.16.4",
+    "graphql": "^14.6.0",
+    "nodemon": "^1.18.9"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
+    "@babel/preset-react": "^7.9.4"
   }
 }

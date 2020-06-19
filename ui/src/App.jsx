@@ -13,10 +13,26 @@ class IssueFilter extends React.Component {
     }
 }
 
+function IssueRow(props) {
+    const issue = props.issue;
+    return (
+        <tr>
+            <td>{issue.id}</td>
+            <td>{issue.status}</td>
+            <td>{issue.owner}</td>
+            <td>{issue.created.toDateString()}</td>
+            <td>{issue.effort}</td>
+            <td>{issue.due ? issue.due.toDateString() : ''}</td>
+            <td>{issue.title}</td>
+        </tr>
+    );
+}
+
 function IssueTable(props) {
     const issueRows = props.issues.map(issue =>
         <IssueRow key={issue.id} issue={issue} />
     );
+
     return (
         <table className="bordered-table">
             <thead>
@@ -42,6 +58,7 @@ class IssueAdd extends React.Component {
         super();
         this.handleSubmit = this.handleSubmit.bind(this);
     }
+
     handleSubmit(e) {
         e.preventDefault();
         const form = document.forms.issueAdd;
@@ -52,6 +69,7 @@ class IssueAdd extends React.Component {
         this.props.createIssue(issue);
         form.owner.value = ""; form.title.value = "";
     }
+
     render() {
         return (
             <form name="issueAdd" onSubmit={this.handleSubmit}>
@@ -63,62 +81,16 @@ class IssueAdd extends React.Component {
     }
 }
 
-class IssueList extends React.Component {
-    constructor() {
-        super();
-        this.state = { issues: [] };
-        this.createIssue = this.createIssue.bind(this);
-    }
-    componentDidMount() {
-        this.loadData();
-    }
-    async loadData() {
-        const query = `query {
-            issueList {
-                id title status owner
-                created effort due
-            }
-        }`;
-        const data = await graphQLFetch(query);
-        if (data) {
-            this.setState({ issues: data.issueList });
-        }
-    }
-
-    async createIssue(issue) {
-        const query = `mutation issueAdd($issue: IssueInputs!) {
-            issueAdd(issue: $issue) {
-                id
-            }
-        }`;
-        const data = await graphQLFetch(query, { issue });
-        if (data) {
-            this.loadData();
-        }
-    }
-    render() {
-        return (
-            <React.Fragment>
-                <h1>Issue Tracker</h1>
-                <IssueFilter />
-                <hr />
-                <IssueTable issues={this.state.issues} />
-                <hr />
-                <IssueAdd createIssue={this.createIssue} />
-            </React.Fragment>
-        );
-    }
-}
-
 async function graphQLFetch(query, variables = {}) {
     try {
-        const response = await fetch('/graphql', {
+        const response = await fetch(window.ENV.UI_API_ENDPOINT, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json'},
             body: JSON.stringify({ query, variables })
         });
         const body = await response.text();
         const result = JSON.parse(body, jsonDateReviver);
+
         if (result.errors) {
             const error = result.errors[0];
             if (error.extensions.code == 'BAD_USER_INPUT') {
@@ -134,20 +106,58 @@ async function graphQLFetch(query, variables = {}) {
     }
 }
 
-function IssueRow(props) {
-    const issue = props.issue;
-    return (
-        <tr>
-            <td>{issue.id}</td>
-            <td>{issue.status}</td>
-            <td>{issue.owner}</td>
-            <td>{issue.created.toDateString()}</td>
-            <td>{issue.effort}</td>
-            <td>{issue.due ? issue.due.toDateString() : ' '}</td>
-            <td>{issue.title}</td>
-        </tr>
-    );
+class IssueList extends React.Component {
+    constructor() {
+        super();
+        this.state = { issues: [] };
+        this.createIssue = this.createIssue.bind(this);
+    }
+
+    componentDidMount() {
+        this.loadData();
+    }
+
+    async loadData() {
+        const query = `query {
+      issueList {
+        id title status owner
+        created effort due
+      }
+    }`;
+
+        const data = await graphQLFetch(query);
+        if (data) {
+            this.setState({ issues: data.issueList });
+        }
+    }
+
+    async createIssue(issue) {
+        const query = `mutation issueAdd($issue: IssueInputs!) {
+      issueAdd(issue: $issue) {
+        id
+      }
+    }`;
+
+        const data = await graphQLFetch(query, { issue });
+        if (data) {
+            this.loadData();
+        }
+    }
+
+    render() {
+        return (
+            <React.Fragment>
+                <h1>Issue Tracker</h1>
+                <IssueFilter />
+                <hr />
+                <IssueTable issues={this.state.issues} />
+                <hr />
+                <IssueAdd createIssue={this.createIssue} />
+            </React.Fragment>
+        );
+    }
 }
 
 const element = <IssueList />;
+
 ReactDOM.render(element, document.getElementById('contents'));
