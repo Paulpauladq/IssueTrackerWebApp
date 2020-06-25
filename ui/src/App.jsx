@@ -32,7 +32,7 @@ function IssueRow({ issue }) {
     );
 }
 
-function IssueTable({ issue }) {
+function IssueTable({ issues }) {
     const issueRows = issues.map(issue => (
         <IssueRow key={issue.id} issue={issue} />
     ));

@@ -68,7 +68,7 @@ function IssueRow(_ref) {
 }
 
 function IssueTable(_ref2) {
-  var issue = _ref2.issue;
+  var issues = _ref2.issues;
   var issueRows = issues.map(function (issue) {
     return /*#__PURE__*/React.createElement(IssueRow, {
       key: issue.id,

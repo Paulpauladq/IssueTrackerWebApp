@@ -1,5 +1,13 @@
 # ZiqiTang-Book
 
+## Chapter 8
+
+### Back-end Modules
+
+* In order to separate different functionalities and modules for backend codes, we will refactor the backend code.
+* The original Server.js file is separated into 5 parts including about.js, api_handler.js, db.js, graphql_date.js and server.js.
+
+
 ## Chapter 7
 
 ### UI server
