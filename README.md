@@ -1,12 +1,68 @@
 # ZiqiTang-Book
 
+## Chapter 9
+
+### Simple Routing
+* In this step, we are using the React HashRouter to deal with the page routings.
+* We add nav bar at the top of the index page.
+* We redirect the home page to the IssueList page.
+* We will make the page show "Page not found" when the routing is wrong.
+![chapter9](./images/chapter9_simple_routing.png)
+![chapter9](./images/chapter9_routing_report.png)
+![chapter9](./images/chapter9_pnf.png)
+
+### Route Parameters
+* In this step, we are using hyperlink in IssueTable to route to the specific links using props
+![chapter9](./images/chapter9_edit.png)
+![chapter9](./images/chapter9_edit_props.png)
+
+### Query Parameters
+* In this step, we add another nav bar in order to allow routing to issues with different statuses.
+* Add another componentDidUpdate() function to check if the search is changed.
+![chapter9](./images/chapter9_new_status.png)
+![chapter9](./images/chapter9_assigned_status.png)
+
+### Links
+* In this step, we change the a href elements to React Links. 
+![chapter9](./images/chapter9_links.png)
+
+### Programmatic Navigation
+* We add a dropdown box for filtered issues page routing.
+![chapter9](./images/chapter9_dropdown.png)
+
+### Nested Routing
+* In this step, we will add the IssueDetail components and use dynamic routing to let it link to another section of the page.
+* We'll firstly change the schema (add the description field).
+* In each issue, we will add get issue to fetch data for each issue.
+* Inside the IssueDetail component, the loadData() method will be called when the component is firstly mounted or its ID has been changed.
+![chapter9](./images/chapter9_nested.png)
+
+
+
 ## Chapter 8
 
 ### Back-end Modules
-
 * In order to separate different functionalities and modules for backend codes, we will refactor the backend code.
 * The original Server.js file is separated into 5 parts including about.js, api_handler.js, db.js, graphql_date.js and server.js.
 
+## Front-end Modules
+* After refactoring the back-end modules, we split the ui code into two parts. we separate the fetching from mongoDb part into another file to decouple our app.
+
+## Transform and Bundle
+* We are using the Webpack package to watch the app right now.
+* Then we separate the entire App.jsx to different classes in order to decouple.
+
+## Library Module
+* In the previous step, we're getting every three-party libraries from CDN, but this costs us more time to load package and more memory.
+* Alternatively, we use Webpack to include these packages.
+* Now, we are fetching data from the verndor bundle of UI server. If we change some of the Jsx, the response code 304 will appear.
+![chapter8](./images/chapter8_library.png)
+
+## Hot Module Replacement
+* In this step, we want to apply HMR to avoid tedious refreshing and allow instant rerendering if any changes have been made.
+![chapter8](./images/chapter8_hmr.png)
+* After using the module.hot.accept() the changes should be accepte
+![chapter8](./images/chapter8_hmr_2.png)
 
 ## Chapter 7
 
