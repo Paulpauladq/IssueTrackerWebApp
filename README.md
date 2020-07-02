@@ -10,8 +10,9 @@
 * We are also allowing the user to reset to the current status before applying it when selecting the wrong filter.
 ![chapter10](./images/chapter10_apply_resest.png)
 
-
-
+### Typed Input
+* We add the effort value fields in query sentence and use it when applying the filter.
+![chapter10](./images/chapter10_effort.png)
 ## Chapter 9
 
 ### Simple Routing
