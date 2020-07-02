@@ -13,6 +13,12 @@
 ### Typed Input
 * We add the effort value fields in query sentence and use it when applying the filter.
 ![chapter10](./images/chapter10_effort.png)
+
+### Edit Form
+* We add the edit form page when clicking on the edit button in each line of the issue.
+* Also, the prev and next button allow navigating to prev/next page according to ID.
+![chapter10](./images/chapter10_edit_form.png)
+
 ## Chapter 9
 
 ### Simple Routing
