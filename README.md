@@ -1,5 +1,17 @@
 # ZiqiTang-Book
 
+## Chapter 10
+
+### Controlled Component
+* We get the status of the current filter from the parent component's props and display in the dropdown box.
+![chapter10](./images/Chapter10_display.png)
+* We then add two buttons including "Apply" and "Reset".
+* Now, we will record the current state and change status, the filter won't be changed until the apply button is hit.
+* We are also allowing the user to reset to the current status before applying it when selecting the wrong filter.
+![chapter10](./images/chapter10_apply_resest.png)
+
+
+
 ## Chapter 9
 
 ### Simple Routing

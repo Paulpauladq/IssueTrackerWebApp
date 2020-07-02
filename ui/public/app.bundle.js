@@ -137,7 +137,7 @@
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "";
+/******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	var jsonpArray = window["webpackJsonp"] = window["webpackJsonp"] || [];
 /******/ 	var oldJsonpFunction = jsonpArray.push.bind(jsonpArray);
@@ -201,7 +201,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
 /* harmony import */ var _IssueList_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./IssueList.jsx */ "./src/IssueList.jsx");
-/* harmony import */ var _IssueEdit_jsx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./IssueEdit.jsx */ "./src/IssueEdit.jsx");
+/* harmony import */ var _IssueEdit_jsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./IssueEdit.jsx */ "./src/IssueEdit.jsx");
 /* harmony import */ var _IssueReport_jsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./IssueReport.jsx */ "./src/IssueReport.jsx");
 
 
@@ -223,7 +223,7 @@ function Contents() {
     component: _IssueList_jsx__WEBPACK_IMPORTED_MODULE_2__["default"]
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     path: "/edit/:id",
-    component: _IssueEdit_jsx__WEBPACK_IMPORTED_MODULE_5__["default"]
+    component: _IssueEdit_jsx__WEBPACK_IMPORTED_MODULE_3__["default"]
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     path: "/report",
     component: _IssueReport_jsx__WEBPACK_IMPORTED_MODULE_4__["default"]
@@ -494,7 +494,9 @@ function IssueEdit(_ref) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
+/* harmony import */ var url_search_params__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! url-search-params */ "./node_modules/url-search-params/build/url-search-params.node.js");
+/* harmony import */ var url_search_params__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(url_search_params__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -517,7 +519,7 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
-/* eslint "react/prefer-stateless-function": "off" */
+
 
 
 
@@ -526,20 +528,57 @@ var IssueFilter = /*#__PURE__*/function (_React$Component) {
 
   var _super = _createSuper(IssueFilter);
 
-  function IssueFilter() {
+  function IssueFilter(_ref) {
     var _this;
+
+    var search = _ref.location.search;
 
     _classCallCheck(this, IssueFilter);
 
     _this = _super.call(this);
+    var params = new url_search_params__WEBPACK_IMPORTED_MODULE_1___default.a(search);
+    _this.state = {
+      status: params.get('status') || '',
+      changed: false
+    };
     _this.onChangeStatus = _this.onChangeStatus.bind(_assertThisInitialized(_this));
+    _this.applyFilter = _this.applyFilter.bind(_assertThisInitialized(_this));
+    _this.showOriginalFilter = _this.showOriginalFilter.bind(_assertThisInitialized(_this));
     return _this;
   }
 
   _createClass(IssueFilter, [{
+    key: "componentDidUpdate",
+    value: function componentDidUpdate(prevProps) {
+      var prevSearch = prevProps.location.search;
+      var search = this.props.location.search;
+
+      if (prevSearch !== search) {
+        this.showOriginalFilter();
+      }
+    }
+  }, {
     key: "onChangeStatus",
     value: function onChangeStatus(e) {
-      var status = e.target.value;
+      this.setState({
+        status: e.target.value,
+        changed: true
+      });
+    }
+  }, {
+    key: "showOriginalFilter",
+    value: function showOriginalFilter() {
+      var search = this.props.location.search;
+      var params = new url_search_params__WEBPACK_IMPORTED_MODULE_1___default.a(search);
+      this.setState({
+        status: params.get('status') || '',
+        changed: false
+      });
+    }
+  }, {
+    key: "applyFilter",
+    value: function applyFilter() {
+      var status = this.state.status;
       var history = this.props.history;
       history.push({
         pathname: '/issues',
@@ -549,7 +588,11 @@ var IssueFilter = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      var _this$state = this.state,
+          status = _this$state.status,
+          changed = _this$state.changed;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Status:", ' ', /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+        value: status,
         onChange: this.onChangeStatus
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
         value: ""
@@ -561,14 +604,21 @@ var IssueFilter = /*#__PURE__*/function (_React$Component) {
         value: "Fixed"
       }, "Fixed"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
         value: "Closed"
-      }, "Closed")));
+      }, "Closed")), ' ', /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        type: "button",
+        onClick: this.applyFilter
+      }, "Apply"), ' ', /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        type: "button",
+        onClick: this.showOriginalFilter,
+        disabled: !changed
+      }, "Reset"));
     }
   }]);
 
   return IssueFilter;
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["withRouter"])(IssueFilter));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["withRouter"])(IssueFilter));
 
 /***/ }),
 
