@@ -21,7 +21,17 @@
 
 ### Specialized Input
 * We'll add special class for different inputs and handle some invalid input.
-![chapter10](./images/chapter10_date_input.png)
+![chapter10](./images/chapter10_date_input.png) 
+
+### Update the issue using API
+* Firstly, we will add a new mutation in schema to allow updating the issue.
+* Then, we'll rewrite the handleSubmit() method to actually call API and store the updated data into the datebase.
+* All the wrong input should be handled because of the using of specialized input type.
+![chapter10](./images/chapter10_update_issue.png)
+* After that, we will add close button on each issue and set the status to "Closed" by clicking on the button.
+![chapter10](./images/chapter10_close.png)
+
+
 
 ## Chapter 9
 
