@@ -30,8 +30,8 @@
 ![chapter10](./images/chapter10_update_issue.png)
 * After that, we will add close button on each issue and set the status to "Closed" by clicking on the button.
 ![chapter10](./images/chapter10_close.png)
-
-
+* Then we also add delete function.
+![chapter10](./images/chapter10_delete.png)
 
 ## Chapter 9
 
