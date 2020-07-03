@@ -19,6 +19,10 @@
 * Also, the prev and next button allow navigating to prev/next page according to ID.
 ![chapter10](./images/chapter10_edit_form.png)
 
+### Specialized Input
+* We'll add special class for different inputs and handle some invalid input.
+![chapter10](./images/chapter10_date_input.png)
+
 ## Chapter 9
 
 ### Simple Routing
