@@ -380,117 +380,21 @@ var DateInput = /*#__PURE__*/function (_React$Component) {
 
 /***/ }),
 
-/***/ "./src/IssueAdd.jsx":
-/*!**************************!*\
-  !*** ./src/IssueAdd.jsx ***!
-  \**************************/
+/***/ "./src/IssueAddNavItem.jsx":
+/*!*********************************!*\
+  !*** ./src/IssueAddNavItem.jsx ***!
+  \*********************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return IssueAdd; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
 /* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/es/index.js");
-function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-
-
-
-
-var IssueAdd = /*#__PURE__*/function (_React$Component) {
-  _inherits(IssueAdd, _React$Component);
-
-  var _super = _createSuper(IssueAdd);
-
-  function IssueAdd() {
-    var _this;
-
-    _classCallCheck(this, IssueAdd);
-
-    _this = _super.call(this);
-    _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
-    return _this;
-  }
-
-  _createClass(IssueAdd, [{
-    key: "handleSubmit",
-    value: function handleSubmit(e) {
-      e.preventDefault();
-      var form = document.forms.issueAdd;
-      var issue = {
-        owner: form.owner.value,
-        title: form.title.value,
-        due: new Date(new Date().getTime() + 1000 * 60 * 60 * 24 * 10)
-      };
-      var createIssue = this.props.createIssue;
-      createIssue(issue);
-      form.owner.value = '';
-      form.title.value = '';
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Form"], {
-        inline: true,
-        name: "issueAdd",
-        onSubmit: this.handleSubmit
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["FormGroup"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["ControlLabel"], null, "Owner:"), ' ', /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["FormControl"], {
-        type: "text",
-        name: "owner"
-      })), ' ', /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["FormGroup"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["ControlLabel"], null, "Title:"), ' ', /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["FormControl"], {
-        type: "text",
-        name: "title"
-      })), ' ', /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Button"], {
-        bsStyle: "primary",
-        type: "submit"
-      }, "Add"));
-    }
-  }]);
-
-  return IssueAdd;
-}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
-
-
-
-/***/ }),
-
-/***/ "./src/IssueDetail.jsx":
-/*!*****************************!*\
-  !*** ./src/IssueDetail.jsx ***!
-  \*****************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return IssueDetail; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _graphQLFetch_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./graphQLFetch.js */ "./src/graphQLFetch.js");
+/* harmony import */ var _graphQLFetch_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./graphQLFetch.js */ "./src/graphQLFetch.js");
+/* harmony import */ var _Toast_jsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Toast.jsx */ "./src/Toast.jsx");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -520,6 +424,206 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 
+
+
+
+var IssueAddNavItem = /*#__PURE__*/function (_React$Component) {
+  _inherits(IssueAddNavItem, _React$Component);
+
+  var _super = _createSuper(IssueAddNavItem);
+
+  function IssueAddNavItem(props) {
+    var _this;
+
+    _classCallCheck(this, IssueAddNavItem);
+
+    _this = _super.call(this, props);
+    _this.state = {
+      showing: false,
+      toastVisible: false,
+      toastMessage: '',
+      toastType: 'success'
+    };
+    _this.showModal = _this.showModal.bind(_assertThisInitialized(_this));
+    _this.hideModal = _this.hideModal.bind(_assertThisInitialized(_this));
+    _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
+    _this.showError = _this.showError.bind(_assertThisInitialized(_this));
+    _this.dismissToast = _this.dismissToast.bind(_assertThisInitialized(_this));
+    return _this;
+  }
+
+  _createClass(IssueAddNavItem, [{
+    key: "showModal",
+    value: function showModal() {
+      this.setState({
+        showing: true
+      });
+    }
+  }, {
+    key: "hideModal",
+    value: function hideModal() {
+      this.setState({
+        showing: false
+      });
+    }
+  }, {
+    key: "showError",
+    value: function showError(message) {
+      this.setState({
+        toastVisible: true,
+        toastMessage: message,
+        toastType: 'danger'
+      });
+    }
+  }, {
+    key: "dismissToast",
+    value: function dismissToast() {
+      this.setState({
+        toastVisible: false
+      });
+    }
+  }, {
+    key: "handleSubmit",
+    value: function () {
+      var _handleSubmit = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(e) {
+        var form, issue, query, data, history;
+        return regeneratorRuntime.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                e.preventDefault();
+                this.hideModal();
+                form = document.forms.issueAdd;
+                issue = {
+                  owner: form.owner.value,
+                  title: form.title.value,
+                  due: new Date(new Date().getTime() + 1000 * 60 * 60 * 24 * 10)
+                };
+                query = "mutation issueAdd($issue: IssueInputs!) {\n      issueAdd(issue: $issue) {\n        id\n      }\n    }";
+                _context.next = 7;
+                return Object(_graphQLFetch_js__WEBPACK_IMPORTED_MODULE_3__["default"])(query, {
+                  issue: issue
+                }, this.showError);
+
+              case 7:
+                data = _context.sent;
+
+                if (data) {
+                  history = this.props.history;
+                  history.push("/edit/".concat(data.issueAdd.id));
+                }
+
+              case 9:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee, this);
+      }));
+
+      function handleSubmit(_x) {
+        return _handleSubmit.apply(this, arguments);
+      }
+
+      return handleSubmit;
+    }()
+  }, {
+    key: "render",
+    value: function render() {
+      var showing = this.state.showing;
+      var _this$state = this.state,
+          toastVisible = _this$state.toastVisible,
+          toastMessage = _this$state.toastMessage,
+          toastType = _this$state.toastType;
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["NavItem"], {
+        onClick: this.showModal
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["OverlayTrigger"], {
+        placement: "left",
+        delayShow: 1000,
+        overlay: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Tooltip"], {
+          id: "create-issue"
+        }, "Create Issue")
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Glyphicon"], {
+        glyph: "plus"
+      }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Modal"], {
+        keyboard: true,
+        show: showing,
+        onHide: this.hideModal
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Modal"].Header, {
+        closeButton: true
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Modal"].Title, null, "Create Issue")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Modal"].Body, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Form"], {
+        name: "issueAdd"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["FormGroup"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["ControlLabel"], null, "Title"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["FormControl"], {
+        name: "title",
+        autoFocus: true
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["FormGroup"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["ControlLabel"], null, "Owner"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["FormControl"], {
+        name: "owner"
+      })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Modal"].Footer, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["ButtonToolbar"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Button"], {
+        type: "button",
+        bsStyle: "primary",
+        onClick: this.handleSubmit
+      }, "Submit"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Button"], {
+        bsStyle: "link",
+        onClick: this.hideModal
+      }, "Cancel")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Toast_jsx__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        showing: toastVisible,
+        onDismiss: this.dismissToast,
+        bsStyle: toastType
+      }, toastMessage));
+    }
+  }]);
+
+  return IssueAddNavItem;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["withRouter"])(IssueAddNavItem));
+
+/***/ }),
+
+/***/ "./src/IssueDetail.jsx":
+/*!*****************************!*\
+  !*** ./src/IssueDetail.jsx ***!
+  \*****************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return IssueDetail; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _graphQLFetch_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./graphQLFetch.js */ "./src/graphQLFetch.js");
+/* harmony import */ var _Toast_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Toast.jsx */ "./src/Toast.jsx");
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+
+
+
+
 var IssueDetail = /*#__PURE__*/function (_React$Component) {
   _inherits(IssueDetail, _React$Component);
 
@@ -532,8 +636,13 @@ var IssueDetail = /*#__PURE__*/function (_React$Component) {
 
     _this = _super.call(this);
     _this.state = {
-      issue: {}
+      issue: {},
+      toastVisible: false,
+      toastMessage: ' ',
+      toastType: 'info'
     };
+    _this.showError = _this.showError.bind(_assertThisInitialized(_this));
+    _this.dismissToast = _this.dismissToast.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -553,6 +662,22 @@ var IssueDetail = /*#__PURE__*/function (_React$Component) {
       }
     }
   }, {
+    key: "showError",
+    value: function showError(message) {
+      this.setState({
+        toastVisible: true,
+        toastMessage: message,
+        toastType: 'danger'
+      });
+    }
+  }, {
+    key: "dismissToast",
+    value: function dismissToast() {
+      this.setState({
+        toastVisible: false
+      });
+    }
+  }, {
     key: "loadData",
     value: function () {
       var _loadData = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
@@ -566,7 +691,7 @@ var IssueDetail = /*#__PURE__*/function (_React$Component) {
                 _context.next = 4;
                 return Object(_graphQLFetch_js__WEBPACK_IMPORTED_MODULE_1__["default"])(query, {
                   id: parseInt(id, 10)
-                });
+                }, this.showError);
 
               case 4:
                 data = _context.sent;
@@ -599,7 +724,15 @@ var IssueDetail = /*#__PURE__*/function (_React$Component) {
     key: "render",
     value: function render() {
       var description = this.state.issue.description;
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Description"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("pre", null, description));
+      var _this$state = this.state,
+          toastVisible = _this$state.toastVisible,
+          toastType = _this$state.toastType,
+          toastMessage = _this$state.toastMessage;
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Description"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("pre", null, description), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Toast_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        showing: toastVisible,
+        onDismiss: this.dismissToast,
+        bsStyle: toastType
+      }, toastMessage));
     }
   }]);
 
@@ -630,6 +763,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _NumInput_jsx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./NumInput.jsx */ "./src/NumInput.jsx");
 /* harmony import */ var _DateInput_jsx__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./DateInput.jsx */ "./src/DateInput.jsx");
 /* harmony import */ var _TextInput_jsx__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./TextInput.jsx */ "./src/TextInput.jsx");
+/* harmony import */ var _Toast_jsx__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Toast.jsx */ "./src/Toast.jsx");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
@@ -675,6 +809,7 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 
+
 var IssueEdit = /*#__PURE__*/function (_React$Component) {
   _inherits(IssueEdit, _React$Component);
 
@@ -688,11 +823,20 @@ var IssueEdit = /*#__PURE__*/function (_React$Component) {
     _this = _super.call(this);
     _this.state = {
       issue: {},
-      invalidFields: {}
+      invalidFields: {},
+      showingValidation: false,
+      toastVisible: false,
+      toastMessage: '',
+      toastType: 'success'
     };
     _this.onChange = _this.onChange.bind(_assertThisInitialized(_this));
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
     _this.onValidityChange = _this.onValidityChange.bind(_assertThisInitialized(_this));
+    _this.dismissValidation = _this.dismissValidation.bind(_assertThisInitialized(_this));
+    _this.showValidation = _this.showValidation.bind(_assertThisInitialized(_this));
+    _this.showSuccess = _this.showSuccess.bind(_assertThisInitialized(_this));
+    _this.showError = _this.showError.bind(_assertThisInitialized(_this));
+    _this.dismissToast = _this.dismissToast.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -748,35 +892,36 @@ var IssueEdit = /*#__PURE__*/function (_React$Component) {
             switch (_context.prev = _context.next) {
               case 0:
                 e.preventDefault();
+                this.showValidation();
                 _this$state = this.state, issue = _this$state.issue, invalidFields = _this$state.invalidFields;
 
                 if (!(Object.keys(invalidFields).length !== 0)) {
-                  _context.next = 4;
+                  _context.next = 5;
                   break;
                 }
 
                 return _context.abrupt("return");
 
-              case 4:
+              case 5:
                 query = "mutation issueUpdate(\n      $id: Int!\n      $changes: IssueUpdateInputs!\n    ) {\n      issueUpdate(\n        id: $id\n        changes: $changes\n      ) {\n        id title status owner\n        effort created due description\n      }\n    }";
                 id = issue.id, created = issue.created, changes = _objectWithoutProperties(issue, ["id", "created"]);
-                _context.next = 8;
+                _context.next = 9;
                 return Object(_graphQLFetch_js__WEBPACK_IMPORTED_MODULE_4__["default"])(query, {
                   changes: changes,
                   id: id
-                });
+                }, this.showError);
 
-              case 8:
+              case 9:
                 data = _context.sent;
 
                 if (data) {
                   this.setState({
                     issue: data.issueUpdate
                   });
-                  alert('Updated issue successfully'); // eslint-disable-line no-alert
+                  this.showSuccess('Updated issue successfully');
                 }
 
-              case 10:
+              case 11:
               case "end":
                 return _context.stop();
             }
@@ -804,7 +949,7 @@ var IssueEdit = /*#__PURE__*/function (_React$Component) {
                 _context2.next = 4;
                 return Object(_graphQLFetch_js__WEBPACK_IMPORTED_MODULE_4__["default"])(query, {
                   id: parseInt(id, 10)
-                });
+                }, this.showError);
 
               case 4:
                 data = _context2.sent;
@@ -828,6 +973,45 @@ var IssueEdit = /*#__PURE__*/function (_React$Component) {
       return loadData;
     }()
   }, {
+    key: "showValidation",
+    value: function showValidation() {
+      this.setState({
+        showingValidation: true
+      });
+    }
+  }, {
+    key: "dismissValidation",
+    value: function dismissValidation() {
+      this.setState({
+        showingValidation: false
+      });
+    }
+  }, {
+    key: "showSuccess",
+    value: function showSuccess(message) {
+      this.setState({
+        toastVisible: true,
+        toastMessage: message,
+        toastType: 'success'
+      });
+    }
+  }, {
+    key: "showError",
+    value: function showError(message) {
+      this.setState({
+        toastVisible: true,
+        toastMessage: message,
+        toastType: 'danger'
+      });
+    }
+  }, {
+    key: "dismissToast",
+    value: function dismissToast() {
+      this.setState({
+        toastVisible: false
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
       var id = this.state.issue.id;
@@ -841,12 +1025,15 @@ var IssueEdit = /*#__PURE__*/function (_React$Component) {
         return null;
       }
 
-      var invalidFields = this.state.invalidFields;
+      var _this$state2 = this.state,
+          invalidFields = _this$state2.invalidFields,
+          showingValidation = _this$state2.showingValidation;
       var validationMessage;
 
-      if (Object.keys(invalidFields).length !== 0) {
-        validationMessage = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "error"
+      if (Object.keys(invalidFields).length !== 0 && showingValidation) {
+        validationMessage = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Alert"], {
+          bsStyle: "danger",
+          onDismiss: this.dismissValidation
         }, "Please correct invalid fields before submitting.");
       }
 
@@ -860,6 +1047,10 @@ var IssueEdit = /*#__PURE__*/function (_React$Component) {
       var _this$state$issue3 = this.state.issue,
           created = _this$state$issue3.created,
           due = _this$state$issue3.due;
+      var _this$state3 = this.state,
+          toastVisible = _this$state3.toastVisible,
+          toastMessage = _this$state3.toastMessage,
+          toastType = _this$state3.toastType;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Panel"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Panel"].Heading, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Panel"].Title, null, "Editing issue: ".concat(id))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Panel"].Body, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Form"], {
         horizontal: true,
         onSubmit: this.handleSubmit
@@ -958,11 +1149,18 @@ var IssueEdit = /*#__PURE__*/function (_React$Component) {
         to: "/issues"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Button"], {
         bsStyle: "link"
-      }, "Back")))))), validationMessage), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Panel"].Footer, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+      }, "Back"))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["FormGroup"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Col"], {
+        smOffset: 3,
+        sm: 9
+      }, validationMessage)))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Panel"].Footer, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/edit/".concat(id - 1)
       }, "Prev"), ' | ', /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/edit/".concat(id + 1)
-      }, "Next")));
+      }, "Next")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Toast_jsx__WEBPACK_IMPORTED_MODULE_8__["default"], {
+        showing: toastVisible,
+        onDismiss: this.dismissToast,
+        bsStyle: toastType
+      }, toastMessage));
     }
   }]);
 
@@ -1196,9 +1394,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/es/index.js");
 /* harmony import */ var _IssueFilter_jsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./IssueFilter.jsx */ "./src/IssueFilter.jsx");
 /* harmony import */ var _IssueTable_jsx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./IssueTable.jsx */ "./src/IssueTable.jsx");
-/* harmony import */ var _IssueAdd_jsx__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./IssueAdd.jsx */ "./src/IssueAdd.jsx");
-/* harmony import */ var _IssueDetail_jsx__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./IssueDetail.jsx */ "./src/IssueDetail.jsx");
-/* harmony import */ var _graphQLFetch_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./graphQLFetch.js */ "./src/graphQLFetch.js");
+/* harmony import */ var _IssueDetail_jsx__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./IssueDetail.jsx */ "./src/IssueDetail.jsx");
+/* harmony import */ var _graphQLFetch_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./graphQLFetch.js */ "./src/graphQLFetch.js");
+/* harmony import */ var _Toast_jsx__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Toast.jsx */ "./src/Toast.jsx");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
@@ -1259,11 +1457,16 @@ var IssueList = /*#__PURE__*/function (_React$Component) {
 
     _this = _super.call(this);
     _this.state = {
-      issues: []
+      issues: [],
+      toastVisible: false,
+      toastMessage: ' ',
+      toastType: 'info'
     };
-    _this.createIssue = _this.createIssue.bind(_assertThisInitialized(_this));
     _this.closeIssue = _this.closeIssue.bind(_assertThisInitialized(_this));
     _this.deleteIssue = _this.deleteIssue.bind(_assertThisInitialized(_this));
+    _this.showSuccess = _this.showSuccess.bind(_assertThisInitialized(_this));
+    _this.showError = _this.showError.bind(_assertThisInitialized(_this));
+    _this.dismissToast = _this.dismissToast.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -1301,7 +1504,7 @@ var IssueList = /*#__PURE__*/function (_React$Component) {
                 if (!Number.isNaN(effortMax)) vars.effortMax = effortMax;
                 query = "query issueList(\n            $status: StatusType\n            $effortMin: Int\n            $effortMax: Int\n        ) {\n      issueList(\n        status: $status\n        effortMin: $effortMin\n        effortMax: $effortMax\n      ) {\n        id title status owner\n        created effort due\n      }\n    }";
                 _context.next = 11;
-                return Object(_graphQLFetch_js__WEBPACK_IMPORTED_MODULE_8__["default"])(query, vars);
+                return Object(_graphQLFetch_js__WEBPACK_IMPORTED_MODULE_7__["default"])(query, vars, this.showError);
 
               case 11:
                 data = _context.sent;
@@ -1327,59 +1530,23 @@ var IssueList = /*#__PURE__*/function (_React$Component) {
       return loadData;
     }()
   }, {
-    key: "createIssue",
+    key: "closeIssue",
     value: function () {
-      var _createIssue = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2(issue) {
-        var query, data;
+      var _closeIssue = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2(index) {
+        var query, issues, data;
         return regeneratorRuntime.wrap(function _callee2$(_context2) {
           while (1) {
             switch (_context2.prev = _context2.next) {
               case 0:
-                query = "mutation issueAdd($issue: IssueInputs!) {\n      issueAdd(issue: $issue) {\n        id\n      }\n    }";
-                _context2.next = 3;
-                return Object(_graphQLFetch_js__WEBPACK_IMPORTED_MODULE_8__["default"])(query, {
-                  issue: issue
-                });
-
-              case 3:
-                data = _context2.sent;
-
-                if (data) {
-                  this.loadData();
-                }
-
-              case 5:
-              case "end":
-                return _context2.stop();
-            }
-          }
-        }, _callee2, this);
-      }));
-
-      function createIssue(_x) {
-        return _createIssue.apply(this, arguments);
-      }
-
-      return createIssue;
-    }()
-  }, {
-    key: "closeIssue",
-    value: function () {
-      var _closeIssue = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee3(index) {
-        var query, issues, data;
-        return regeneratorRuntime.wrap(function _callee3$(_context3) {
-          while (1) {
-            switch (_context3.prev = _context3.next) {
-              case 0:
                 query = "mutation issueClose($id: Int!) {\n            issueUpdate(id: $id, changes: { status: Closed }) {\n                id title status owner\n                effort created due description\n            }\n        }";
                 issues = this.state.issues;
-                _context3.next = 4;
-                return Object(_graphQLFetch_js__WEBPACK_IMPORTED_MODULE_8__["default"])(query, {
+                _context2.next = 4;
+                return Object(_graphQLFetch_js__WEBPACK_IMPORTED_MODULE_7__["default"])(query, {
                   id: issues[index].id
-                });
+                }, this.showError);
 
               case 4:
-                data = _context3.sent;
+                data = _context2.sent;
 
                 if (data) {
                   this.setState(function (prevState) {
@@ -1396,13 +1563,13 @@ var IssueList = /*#__PURE__*/function (_React$Component) {
 
               case 6:
               case "end":
-                return _context3.stop();
+                return _context2.stop();
             }
           }
-        }, _callee3, this);
+        }, _callee2, this);
       }));
 
-      function closeIssue(_x2) {
+      function closeIssue(_x) {
         return _closeIssue.apply(this, arguments);
       }
 
@@ -1411,24 +1578,24 @@ var IssueList = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "deleteIssue",
     value: function () {
-      var _deleteIssue = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee4(index) {
+      var _deleteIssue = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee3(index) {
         var query, issues, _this$props, _this$props$location, pathname, search, history, id, data;
 
-        return regeneratorRuntime.wrap(function _callee4$(_context4) {
+        return regeneratorRuntime.wrap(function _callee3$(_context3) {
           while (1) {
-            switch (_context4.prev = _context4.next) {
+            switch (_context3.prev = _context3.next) {
               case 0:
                 query = "mutation issueDelete($id: Int!) {\n            issueDelete(id: $id)\n        }";
                 issues = this.state.issues;
                 _this$props = this.props, _this$props$location = _this$props.location, pathname = _this$props$location.pathname, search = _this$props$location.search, history = _this$props.history;
                 id = issues[index].id;
-                _context4.next = 6;
-                return Object(_graphQLFetch_js__WEBPACK_IMPORTED_MODULE_8__["default"])(query, {
+                _context3.next = 6;
+                return Object(_graphQLFetch_js__WEBPACK_IMPORTED_MODULE_7__["default"])(query, {
                   id: id
-                });
+                }, this.showError);
 
               case 6:
-                data = _context4.sent;
+                data = _context3.sent;
 
                 if (data && data.issueDelete) {
                   this.setState(function (prevState) {
@@ -1446,28 +1613,58 @@ var IssueList = /*#__PURE__*/function (_React$Component) {
                       issues: newList
                     };
                   });
+                  this.showSuccess("Deleted issue ".concat(id, " successfully."));
                 } else {
                   this.loadData();
                 }
 
               case 8:
               case "end":
-                return _context4.stop();
+                return _context3.stop();
             }
           }
-        }, _callee4, this);
+        }, _callee3, this);
       }));
 
-      function deleteIssue(_x3) {
+      function deleteIssue(_x2) {
         return _deleteIssue.apply(this, arguments);
       }
 
       return deleteIssue;
     }()
   }, {
+    key: "showSuccess",
+    value: function showSuccess(message) {
+      this.setState({
+        toastVisible: true,
+        toastMessage: message,
+        toastType: 'success'
+      });
+    }
+  }, {
+    key: "showError",
+    value: function showError(message) {
+      this.setState({
+        toastVisible: true,
+        toastMessage: message,
+        toastType: 'danger'
+      });
+    }
+  }, {
+    key: "dismissToast",
+    value: function dismissToast() {
+      this.setState({
+        toastVisible: false
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
       var issues = this.state.issues;
+      var _this$state = this.state,
+          toastVisible = _this$state.toastVisible,
+          toastType = _this$state.toastType,
+          toastMessage = _this$state.toastMessage;
       var match = this.props.match;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Panel"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Panel"].Heading, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Panel"].Title, {
         toggle: true
@@ -1477,12 +1674,14 @@ var IssueList = /*#__PURE__*/function (_React$Component) {
         issues: issues,
         closeIssue: this.closeIssue,
         deleteIssue: this.deleteIssue
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_IssueAdd_jsx__WEBPACK_IMPORTED_MODULE_6__["default"], {
-        createIssue: this.createIssue
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
         path: "".concat(match.path, "/:id"),
-        component: _IssueDetail_jsx__WEBPACK_IMPORTED_MODULE_7__["default"]
-      }));
+        component: _IssueDetail_jsx__WEBPACK_IMPORTED_MODULE_6__["default"]
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Toast_jsx__WEBPACK_IMPORTED_MODULE_8__["default"], {
+        showing: toastVisible,
+        onDismiss: this.dismissToast,
+        bsStyle: toastType
+      }, toastMessage));
     }
   }]);
 
@@ -1734,9 +1933,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/es/index.js");
-/* harmony import */ var react_router_bootstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-bootstrap */ "./node_modules/react-router-bootstrap/lib/index.js");
-/* harmony import */ var react_router_bootstrap__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_router_bootstrap__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _Contents_jsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Contents.jsx */ "./src/Contents.jsx");
+/* harmony import */ var _IssueAddNavItem_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./IssueAddNavItem.jsx */ "./src/IssueAddNavItem.jsx");
+/* harmony import */ var react_router_bootstrap__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-bootstrap */ "./node_modules/react-router-bootstrap/lib/index.js");
+/* harmony import */ var react_router_bootstrap__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_router_bootstrap__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _Contents_jsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Contents.jsx */ "./src/Contents.jsx");
+
 
 
 
@@ -1745,24 +1946,16 @@ __webpack_require__.r(__webpack_exports__);
 function NavBar() {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Navbar"], {
     fluid: true
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Navbar"].Header, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Navbar"].Brand, null, "Issue Tracker")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Nav"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_bootstrap__WEBPACK_IMPORTED_MODULE_2__["LinkContainer"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Navbar"].Header, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Navbar"].Brand, null, "Issue Tracker")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Nav"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_bootstrap__WEBPACK_IMPORTED_MODULE_3__["LinkContainer"], {
     exact: true,
     to: "/"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["NavItem"], null, "Home")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_bootstrap__WEBPACK_IMPORTED_MODULE_2__["LinkContainer"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["NavItem"], null, "Home")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_bootstrap__WEBPACK_IMPORTED_MODULE_3__["LinkContainer"], {
     to: "/issues"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["NavItem"], null, "Issue List")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_bootstrap__WEBPACK_IMPORTED_MODULE_2__["LinkContainer"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["NavItem"], null, "Issue List")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_bootstrap__WEBPACK_IMPORTED_MODULE_3__["LinkContainer"], {
     to: "/report"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["NavItem"], null, "Report"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Nav"], {
     pullRight: true
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["NavItem"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["OverlayTrigger"], {
-    placement: "left",
-    delayShow: 1000,
-    overlay: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Tooltip"], {
-      id: "create-issue"
-    }, "Create Issue")
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Glyphicon"], {
-    glyph: "plus"
-  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["NavDropdown"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_IssueAddNavItem_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["NavDropdown"], {
     id: "user-dropdown",
     title: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Glyphicon"], {
       glyph: "option-vertical"
@@ -1782,7 +1975,7 @@ function Footer() {
 function Page() {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(NavBar, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Grid"], {
     fluid: true
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Contents_jsx__WEBPACK_IMPORTED_MODULE_3__["default"], null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Footer, null));
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Contents_jsx__WEBPACK_IMPORTED_MODULE_4__["default"], null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Footer, null));
 }
 
 /***/ }),
@@ -1899,6 +2092,102 @@ var TextInput = /*#__PURE__*/function (_React$Component) {
 
 /***/ }),
 
+/***/ "./src/Toast.jsx":
+/*!***********************!*\
+  !*** ./src/Toast.jsx ***!
+  \***********************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Toast; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/es/index.js");
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+
+
+
+var Toast = /*#__PURE__*/function (_React$Component) {
+  _inherits(Toast, _React$Component);
+
+  var _super = _createSuper(Toast);
+
+  function Toast() {
+    _classCallCheck(this, Toast);
+
+    return _super.apply(this, arguments);
+  }
+
+  _createClass(Toast, [{
+    key: "componentDidUpdate",
+    value: function componentDidUpdate() {
+      var _this$props = this.props,
+          showing = _this$props.showing,
+          onDismiss = _this$props.onDismiss;
+
+      if (showing) {
+        clearTimeout(this.dismissTimer);
+        this.dismissTimer = setTimeout(onDismiss, 5000);
+      }
+    }
+  }, {
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      clearTimeout(this.dismissTimer);
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this$props2 = this.props,
+          showing = _this$props2.showing,
+          bsStyle = _this$props2.bsStyle,
+          onDismiss = _this$props2.onDismiss,
+          children = _this$props2.children;
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Collapse"], {
+        in: showing
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        style: {
+          position: 'fixed',
+          bottom: 20,
+          left: 20
+        }
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Alert"], {
+        bsStyle: bsStyle,
+        onDismiss: onDismiss
+      }, children)));
+    }
+  }]);
+
+  return Toast;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+
+
+/***/ }),
+
 /***/ "./src/graphQLFetch.js":
 /*!*****************************!*\
   !*** ./src/graphQLFetch.js ***!
@@ -1927,6 +2216,7 @@ function graphQLFetch(_x) {
 function _graphQLFetch() {
   _graphQLFetch = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(query) {
     var variables,
+        showError,
         response,
         body,
         result,
@@ -1938,8 +2228,9 @@ function _graphQLFetch() {
         switch (_context.prev = _context.next) {
           case 0:
             variables = _args.length > 1 && _args[1] !== undefined ? _args[1] : {};
-            _context.prev = 1;
-            _context.next = 4;
+            showError = _args.length > 2 && _args[2] !== undefined ? _args[2] : null;
+            _context.prev = 2;
+            _context.next = 5;
             return fetch(window.ENV.UI_API_ENDPOINT, {
               method: 'POST',
               headers: {
@@ -1951,12 +2242,12 @@ function _graphQLFetch() {
               })
             });
 
-          case 4:
+          case 5:
             response = _context.sent;
-            _context.next = 7;
+            _context.next = 8;
             return response.text();
 
-          case 7:
+          case 8:
             body = _context.sent;
             result = JSON.parse(body, jsonDateReviver);
 
@@ -1965,26 +2256,26 @@ function _graphQLFetch() {
 
               if (error.extensions.code === 'BAD_USER_INPUT') {
                 details = error.extensions.exception.errors.join('\n ');
-                alert("".concat(error.message, ":\n ").concat(details));
-              } else {
-                alert("".concat(error.extensions.code, ": ").concat(error.message));
+                if (showError) showError("".concat(error.message, ":\n ").concat(details));
+              } else if (showError) {
+                showError("".concat(error.extensions.code, ": ").concat(error.message));
               }
             }
 
             return _context.abrupt("return", result.data);
 
-          case 13:
-            _context.prev = 13;
-            _context.t0 = _context["catch"](1);
-            alert("Error in sending data to server: ".concat(_context.t0.message));
+          case 14:
+            _context.prev = 14;
+            _context.t0 = _context["catch"](2);
+            if (showError) showError("Error in sending data to server: ".concat(_context.t0.message));
             return _context.abrupt("return", null);
 
-          case 17:
+          case 18:
           case "end":
             return _context.stop();
         }
       }
-    }, _callee, null, [[1, 13]]);
+    }, _callee, null, [[2, 14]]);
   }));
   return _graphQLFetch.apply(this, arguments);
 }
