@@ -4,43 +4,43 @@
 
 ### Bootstrap
 * We use bootstrap framework to change the style of our app and make it fit for mobile screen.
-![chapter11](./images/Chapter11_mobile.png)
+![chapter11](./images/chapter11_mobile.png)
 * We change the style of the button using bootstrap packages.
 * We use the icon for both "close" and "delete" button, when we hover over the button, the top will be displayed.
 
 ### Navigation Bar
-![chapter11](./images/Chapter11_navbar.png)
+![chapter11](./images/chapter11_navbar.png)
 
 ### Panels
 * We will and a panel for the filter area.
 * We use the grid to display the gap.
 * Also, we set the type of cursor to indicate the header is clickable.
-![chapter11](./images/Chapter11_panels.png)
+![chapter11](./images/chapter11_panels.png)
 
 ### Tables
 * In this step, we convert the table to Bootstrap table which fits better with both screens.
 * "Select" button is turned into the clickable rows.
-![chapter11](./images/Chapter11_table.png)
+![chapter11](./images/chapter11_table.png)
 
 ### Forms
 * We use Bootstrap form to justify the filter panel.
-![chapter11](./images/Chapter11_forms.png)
+![chapter11](./images/chapter11_forms.png)
 * We will also change the edit form to horizontal form.
-![chapter11](./images/Chapter11_horizonal_forms.png)
+![chapter11](./images/chapter11_horizonal_forms.png)
 
 ### Validation
 * We add a status indicating the validity of the user input.
 * Also, we will show the alert message using Bootstrap.
-![chapter11](./images/Chapter11_validation.png)
+![chapter11](./images/chapter11_validation.png)
 
 ### Toast
 * Instead of using the alert, we convert them using the Toast message which can be customized to disappear after several seconds.
 * We'll apply the toast message to both creating, editing and deleting issues.
-![chapter11](./images/Chapter11_toast.png)
+![chapter11](./images/chapter11_toast.png)
 
 ### Modal
 * At last, we will convert the create issue to the pop up window and redirecting us to the edit page.
-![chapter11](./images/Chapter11_modal.png)
+![chapter11](./images/chapter11_modal.png)
 
 ## Chapter 10
 
