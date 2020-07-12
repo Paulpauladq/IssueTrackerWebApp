@@ -4,10 +4,10 @@ import {
     MenuItem, Glyphicon,
     Grid,
 } from 'react-bootstrap';
-import IssueAddNavItem from './IssueAddNavItem.jsx';
 import { LinkContainer } from 'react-router-bootstrap';
 
 import Contents from './Contents.jsx';
+import IssueAddNavItem from './IssueAddNavItem.jsx';
 
 function NavBar() {
     return (
@@ -33,7 +33,9 @@ function NavBar() {
                     title={<Glyphicon glyph="option-vertical" />}
                     noCaret
                 >
-                    <MenuItem>About</MenuItem>
+                    <LinkContainer to="/about">
+                        <MenuItem>About</MenuItem>
+                    </LinkContainer>
                 </NavDropdown>
             </Nav>
         </Navbar>
@@ -60,7 +62,7 @@ export default function Page() {
         <div>
             <NavBar />
             <Grid fluid>
-            <Contents />
+                <Contents />
             </Grid>
             <Footer />
         </div>
