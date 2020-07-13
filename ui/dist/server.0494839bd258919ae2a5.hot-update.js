@@ -1,5 +1,18 @@
-export default function template(body, data) {
-    return `<!DOCTYPE HTML>
+exports.id = "server";
+exports.modules = {
+
+/***/ "./server/template.js":
+/*!****************************!*\
+  !*** ./server/template.js ***!
+  \****************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return template; });
+function template(body, data) {
+  return `<!DOCTYPE HTML>
 <html>
 <head>
   <meta charset="utf-8">
@@ -22,3 +35,8 @@ export default function template(body, data) {
 </html>
 `;
 }
+
+/***/ })
+
+};
+//# sourceMappingURL=server.0494839bd258919ae2a5.hot-update.js.map

@@ -11,7 +11,7 @@ exports.modules = {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return template; });
-function template(body) {
+function template(body, data) {
   return `<!DOCTYPE HTML>
 <html>
 <head>
@@ -27,9 +27,10 @@ function template(body) {
 <body>
   <!-- Page generated from template. -->
   <div id="contents">${body}</div>
+  <script>window.__INITIAL_DATA__ = ${JSON.stringify(data)}</script>
   <script src="/env.js"></script>
-<script src="/vendor.bundle.js"></script>
-<script src="/app.bundle.js"></script>
+  <script src="/vendor.bundle.js"></script>
+  <script src="/app.bundle.js"></script>
 </body>
 </html>
 `;
@@ -38,4 +39,4 @@ function template(body) {
 /***/ })
 
 };
-//# sourceMappingURL=server.5eaa2edcad743fc49c71.hot-update.js.map
+//# sourceMappingURL=server.c64125340272f6811be7.hot-update.js.map
