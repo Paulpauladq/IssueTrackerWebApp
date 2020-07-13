@@ -1,5 +1,56 @@
 # ZiqiTang-Book
 
+## Chapter 13
+
+### Mongo aggregate
+* Use script to insert 100 records.
+* Use aggregate function to extract the specific info from the data.
+* Add count Api to get the count for different filters.
+
+## Report page
+* By using the count api, we're also to do a brief summary on the report page.
+![chapter13](./images/chapter13_report.png)
+
+## Pagination
+* Add another API for pagination with the extra parameter page number.
+* Change the UI using PageLink, add pagination for all the issues.
+![chapter13](./images/chapter13_page.png)
+
+## Undo Delete
+* Add restore id by adding extra deleted collection in mongoDB.
+* change the UI to add the undo button for every operation.
+
+## Search bar
+* Add api with text index
+* Use that api to implement the search bar.
+![chapter13](./images/chapter13_search.png)
+
+
+## Chapter 12
+
+### Basic Server Rendering
+* We add an About page and make it server-rendered.
+![chapter12](./images/chapter12_about.png)
+
+## Webpack and HMR for Server
+* We use webpack bundle to avoid manual configuration of the About,js page.
+* We add auto-configuration using HMR to allow the server to restart on most of the change except that on uiserver.js.
+* We'll also use StaticRouter to render the Page component instead of rendering About directly.
+* Instead of using render, we use hydrate to allow user interaction without warning. 
+
+## Genereated Routes
+* We have managed to get rid of the hard-coding of the data that needs to be fetched
+based on the component that will be rendered for the matched route.
+
+## Data Fetcher with Parameters/ search and Detail
+* Use the server rendering for the issue table data fetch so that every time the page is refreshed, there won't be any fetch operation.
+![chapter12](./images/chapter12_fetch.png)
+* Also, use nested routes to render the IssueDetail as well.
+
+## Redirect
+* Add a 301 redirect request from the server when we request to the home page.\
+![chapter12](./images/chapter12_redirect.png)
+
 ## Chapter 11
 
 ### Bootstrap

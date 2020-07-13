@@ -59,6 +59,7 @@ type Query {
     status: StatusType
     effortMin: Int
     effortMax: Int
+    search: String
     page: Int = 1
   ): IssueListWithPages
   issue(id: Int!): Issue!
@@ -73,4 +74,5 @@ type Mutation {
   issueAdd(issue: IssueInputs!): Issue!
   issueUpdate(id: Int!, changes: IssueUpdateInputs!): Issue!
   issueDelete(id: Int!): Boolean!
+  issueRestore(id: Int!): Boolean!
 }

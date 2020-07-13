@@ -10,7 +10,7 @@ async function get(_, { id }) {
 const PAGE_SIZE = 10;
 
 async function list(_, {
-    status, effortMin, effortMax, page,
+    status, effortMin, effortMax, search, page,
 }) {
     const db = getDb();
     const filter = {};
@@ -22,6 +22,8 @@ async function list(_, {
         if (effortMin !== undefined) filter.effort.$gte = effortMin;
         if (effortMax !== undefined) filter.effort.$lte = effortMax;
     }
+
+    if (search) filter.$text = { $search: search };
 
     const cursor = db.collection('issues').find(filter)
         .sort({ id: 1 })
@@ -87,6 +89,20 @@ async function remove(_, { id }) {
     return false;
 }
 
+async function restore(_, { id }) {
+    const db = getDb();
+    const issue = await db.collection('deleted_issues').findOne({ id });
+    if (!issue) return false;
+    issue.deleted = new Date();
+
+    let result = await db.collection('issues').insertOne(issue);
+    if (result.insertedId) {
+        result = await db.collection('deleted_issues').removeOne({ id });
+        return result.deletedCount === 1;
+    }
+    return false;
+}
+
 async function counts(_, { status, effortMin, effortMax }) {
     const db = getDb();
     const filter = {};
@@ -125,5 +141,6 @@ module.exports = {
     get,
     update,
     delete: remove,
+    restore,
     counts,
 };
