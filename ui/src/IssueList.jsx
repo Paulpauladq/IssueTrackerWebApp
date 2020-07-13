@@ -8,16 +8,48 @@ import IssueTable from './IssueTable.jsx';
 import IssueDetail from './IssueDetail.jsx';
 import graphQLFetch from './graphQLFetch.js';
 import Toast from './Toast.jsx';
+import store from './store.js';
 
 export default class IssueList extends React.Component {
+    static async fetchData(match, search, showError) {
+        const params = new URLSearchParams(search);
+        const vars = {};
+        if (params.get('status')) vars.status = params.get('status');
+
+        const effortMin = parseInt(params.get('effortMin'), 10);
+        if (!Number.isNaN(effortMin)) vars.effortMin = effortMin;
+        const effortMax = parseInt(params.get('effortMax'), 10);
+        if (!Number.isNaN(effortMax)) vars.effortMax = effortMax;
+
+        const query = `query issueList(
+      $status: StatusType
+      $effortMin: Int
+      $effortMax: Int
+    ) {
+      issueList(
+        status: $status
+        effortMin: $effortMin
+        effortMax: $effortMax
+      ) {
+        id title status owner
+        created effort due
+      }
+    }`;
+
+        const data = await graphQLFetch(query, vars, showError);
+        return data;
+    }
+
     constructor() {
         super();
-        this.state = { issues: [],
+        const issues = store.initialData ? store.initialData.issueList : null;
+        delete store.initialData;
+        this.state = {
+            issues,
             toastVisible: false,
-            toastMessage: ' ',
+            toastMessage: '',
             toastType: 'info',
         };
-
         this.closeIssue = this.closeIssue.bind(this);
         this.deleteIssue = this.deleteIssue.bind(this);
         this.showSuccess = this.showSuccess.bind(this);
@@ -26,7 +58,8 @@ export default class IssueList extends React.Component {
     }
 
     componentDidMount() {
-        this.loadData();
+        const { issues } = this.state;
+        if (issues == null) this.loadData();
     }
 
     componentDidUpdate(prevProps) {
@@ -39,31 +72,7 @@ export default class IssueList extends React.Component {
 
     async loadData() {
         const { location: { search } } = this.props;
-        const params = new URLSearchParams(search);
-        const vars = {};
-        if (params.get('status')) vars.status = params.get('status');
-
-        const effortMin = parseInt(params.get('effortMin'), 10);
-        if (!Number.isNaN(effortMin)) vars.effortMin = effortMin;
-        const effortMax = parseInt(params.get('effortMax'), 10);
-        if (!Number.isNaN(effortMax)) vars.effortMax = effortMax;
-
-        const query = `query issueList(
-            $status: StatusType
-            $effortMin: Int
-            $effortMax: Int
-        ) {
-      issueList(
-        status: $status
-        effortMin: $effortMin
-        effortMax: $effortMax
-      ) {
-        id title status owner
-        created effort due
-      }
-    }`;
-
-        const data = await graphQLFetch(query, vars, this.showError);
+        const data = await IssueList.fetchData(null, search, this.showError);
         if (data) {
             this.setState({ issues: data.issueList });
         }
@@ -71,13 +80,14 @@ export default class IssueList extends React.Component {
 
     async closeIssue(index) {
         const query = `mutation issueClose($id: Int!) {
-            issueUpdate(id: $id, changes: { status: Closed }) {
-                id title status owner
-                effort created due description
-            }
-        }`;
+      issueUpdate(id: $id, changes: { status: Closed }) {
+        id title status owner
+        effort created due description
+      }
+    }`;
         const { issues } = this.state;
-        const data = await graphQLFetch(query, { id: issues[index].id }, this.showError);
+        const data = await graphQLFetch(query, { id: issues[index].id },
+            this.showError);
         if (data) {
             this.setState((prevState) => {
                 const newList = [...prevState.issues];
@@ -91,8 +101,8 @@ export default class IssueList extends React.Component {
 
     async deleteIssue(index) {
         const query = `mutation issueDelete($id: Int!) {
-            issueDelete(id: $id)
-        }`;
+      issueDelete(id: $id)
+    }`;
         const { issues } = this.state;
         const { location: { pathname, search }, history } = this.props;
         const { id } = issues[index];
@@ -117,17 +127,21 @@ export default class IssueList extends React.Component {
             toastVisible: true, toastMessage: message, toastType: 'success',
         });
     }
+
     showError(message) {
         this.setState({
             toastVisible: true, toastMessage: message, toastType: 'danger',
         });
     }
+
     dismissToast() {
         this.setState({ toastVisible: false });
     }
 
     render() {
         const { issues } = this.state;
+        if (issues == null) return null;
+
         const { toastVisible, toastType, toastMessage } = this.state;
         const { match } = this.props;
         return (
@@ -140,8 +154,8 @@ export default class IssueList extends React.Component {
                         <IssueFilter />
                     </Panel.Body>
                 </Panel>
-                <hr />
-                <IssueTable issues={issues}
+                <IssueTable
+                    issues={issues}
                     closeIssue={this.closeIssue}
                     deleteIssue={this.deleteIssue}
                 />
@@ -150,7 +164,8 @@ export default class IssueList extends React.Component {
                     showing={toastVisible}
                     onDismiss={this.dismissToast}
                     bsStyle={toastType}
-                >{toastMessage}
+                >
+                    {toastMessage}
                 </Toast>
             </React.Fragment>
         );
