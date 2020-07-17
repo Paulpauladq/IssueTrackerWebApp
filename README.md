@@ -1,5 +1,22 @@
 # ZiqiTang-Book
 
+## Chapter 14
+
+## Sign in UI
+* In this step, we create a sign-in nav item and insert it into the nav bar.
+* For this step, we will only assign a user1 value upon the sign-in button being clicked on.
+![chapter14](./images/chapter14_signin.png)
+* Then we create a OAuth client ID using Google api and integrate it into our app.
+![chapter14](./images/chapter14_google_api.png)
+
+##Verify the Google token
+* We'll add authentication in the backend in this step.
+* ON the backend, we retrieve the Google token from the request body and verify it using the Google library.
+* After modification, the api call to the new route is now working.
+![chapter14](./images/chapter14_verify.png)
+
+
+
 ## Chapter 13
 
 ### Mongo aggregate
