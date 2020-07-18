@@ -15,6 +15,7 @@ export default async function
     try {
         const response = await fetch(apiEndpoint, {
             method: 'POST',
+            credentials: 'include',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ query, variables }),
         });

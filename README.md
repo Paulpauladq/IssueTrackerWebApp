@@ -25,6 +25,14 @@ info.
 * We create a new sign out api. 
 * Also, on the signinNavItem, we will clear the cookie and forget the Google authentication.
 
+## Authorization
+* In this step, we will prevent unauthorized users from changing the content.
+![chapter14](./images/chapter14_authentication.png)
+* Also, we create the authorzation-aware UI by lifting the state up to page and use  property of the component to achieve it.
+![chapter14](./images/chapter14_aware.png)
+* In order to disable the edit and delete button while not signing in, we adopt UserContext.
+![chapter14](./images/chapter14_aware2.png)
+
 
 
 
