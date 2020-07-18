@@ -9,11 +9,22 @@
 * Then we create a OAuth client ID using Google api and integrate it into our app.
 ![chapter14](./images/chapter14_google_api.png)
 
-##Verify the Google token
+## Verify the Google token
 * We'll add authentication in the backend in this step.
 * ON the backend, we retrieve the Google token from the request body and verify it using the Google library.
 * After modification, the api call to the new route is now working.
 ![chapter14](./images/chapter14_verify.png)
+
+## JSON Web Tokens
+* To avoid the lost of user information upon refreshing or navigating to other pages, we need to implement cross-site cookie to store the log-in 
+info.
+* On every refresh, the client side will call a fetch api from user/auth to get the cookie.
+* On every request, a cookie is sent to the server.
+
+## Signing Out
+* We create a new sign out api. 
+* Also, on the signinNavItem, we will clear the cookie and forget the Google authentication.
+
 
 
 

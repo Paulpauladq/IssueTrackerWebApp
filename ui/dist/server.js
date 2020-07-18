@@ -22,7 +22,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "fefcfdb97d9739f0833d";
+/******/ 	var hotCurrentHash = "fac13f59774ba25c3153";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -2927,7 +2927,7 @@ class SigninNavItem extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Compone
     this.signIn = this.signIn.bind(this);
   }
 
-  componentDidMount() {
+  async componentDidMount() {
     const clientId = window.ENV.GOOGLE_CLIENT_ID;
     if (!clientId) return;
     window.gapi.load('auth2', () => {
@@ -2939,6 +2939,26 @@ class SigninNavItem extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Compone
             disabled: false
           });
         });
+      }
+    });
+    await this.loadData();
+  }
+
+  async loadData() {
+    const apiEndpoint = window.ENV.UI_AUTH_ENDPOINT;
+    const response = await fetch(`${apiEndpoint}/user`, {
+      method: 'POST'
+    });
+    const body = await response.text();
+    const result = JSON.parse(body);
+    const {
+      signedIn,
+      givenName
+    } = result;
+    this.setState({
+      user: {
+        signedIn,
+        givenName
       }
     });
   }
@@ -2986,13 +3006,27 @@ class SigninNavItem extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Compone
     }
   }
 
-  signOut() {
-    this.setState({
-      user: {
-        signedIn: false,
-        givenName: ''
-      }
-    });
+  async signOut() {
+    const apiEndpoint = window.ENV.UI_AUTH_ENDPOINT;
+    const {
+      showError
+    } = this.props;
+
+    try {
+      await fetch(`${apiEndpoint}/signout`, {
+        method: 'POST'
+      });
+      const auth2 = window.gapi.auth2.getAuthInstance();
+      await auth2.signOut();
+      this.setState({
+        user: {
+          signedIn: false,
+          givenName: ''
+        }
+      });
+    } catch (error) {
+      showError(`Error signing out: ${error}`);
+    }
   }
 
   showModal() {
