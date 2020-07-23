@@ -1,5 +1,12 @@
 # ZiqiTang-Book
 
+## Chapter 15
+* Firstly, we create two separate git repo for both api server and ui server.
+* Secondly, we set up our cloud mongodb cluster on Altas and generate data there.
+* Also, we deployed both ui and api app on heroku in proxy mode.
+![chapter15](./images/chapter15_proxy.png)
+![chapter15](./images/chapter15_ql.png)
+
 ## Chapter 14
 
 ## Sign in UI
